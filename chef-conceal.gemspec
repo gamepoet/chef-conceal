@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Chef::Conceal::VERSION
   spec.authors       = ['Ben Scott']
   spec.email         = ['gamepoet@gmail.com']
-  spec.summary       = 'Adds a helper method to make decryption easier'
-  spec.description   = spec.summary
+  spec.summary       = 'Adds a helper method to chef make decryption easier'
+  spec.description   = 'Adds the decrypt helper method to the chef DSL to allow the use of encrypted attributes.'
   spec.homepage      = 'https://github.com/gamepoet/chef-conceal'
   spec.license       = 'MIT'
 
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 1.9.3'
 
-  spec.add_dependency 'conceal', '~> 0.0'
+  spec.add_dependency 'conceal', '~> 0.1'
 
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'rake',   '>= 0.8.7'
