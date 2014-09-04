@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+  synced_folders:
+    - ["<%= File.expand_path('../../pkg', __FILE__) %>", '/pkg/chef-conceal']
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-12.04
+
+suites:
+  - name: default
+    encrypted_data_bag_secret_key_path: test/encrypted_data_bag_secret
+    run_list:
+      - recipe[chef-conceal]
+    attributes:
+      chef-conceal:
+        _local_deploy: true
+        test:
+          password: 1:aes-256-cbc:7OEC+eudCge8z4cacPHPdg==:MWY5NWNmOTRmNmRhOWQ5NWE4MTRhNzM5Mzk4Mzg0ZTRhN2U1ZmIwNWM4ZWVlNDZlOTc2MmFiMGQwNDhhZDg5OTQ0YTJjZTRjZjVlOTY5ZWYzODljZmNlMTE2ZDBmMTMxNzI1ZTJiM2NkNTI5ZmFjMDA4MDhkZGI5NWU3YWZmNzgyMzdjNGYxMDQyNmQ1Y2ViZWRlMjY4YTc1ZTQzOGE4NzQ2ODUyZGUwOTY5YzExODY4OGY0YTg3MGFjNzc3ZmVlMzRiMTgyZGU0YjhiZDk0YmQwNjgyYTZmZGU2YTc1ZmEyYjJlYmE3ZjNlZjUzNWY5NjZlOGYyYmQ4YjY1YmEzYQ==:wjvtsF9WxPyzNYTi0cj19xF5UTe91TEmk2T1BAFEsKs=:+gZ0hSVyB2ZJI66vRzifMsy7fFGD1gnF6DE8otLVQNPA54cmeTrNHAWq/OYBi1mV
